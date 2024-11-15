@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import React, { useState } from "react";
 
 const Navbar = () => {
@@ -11,7 +12,7 @@ const Navbar = () => {
   return (
     <nav className="bg-white px-2 py-2.5 dark:border-gray-700 dark:bg-gray-800 sm:px-4">
       <div className="mx-auto flex flex-wrap items-center">
-        <a className="flex items-center" href="/">
+        <Link className="flex items-center" href="/">
           <img
             alt="OneLot Logo"
             loading="lazy"
@@ -21,7 +22,7 @@ const Navbar = () => {
             className="mr-5"
             src="https://www.onelot.ph/_next/image?url=%2Flogo.png&w=128&q=75"
           />
-        </a>
+        </Link>
         <div className="flex md:order-2 ml-auto">
           <a
             href="/app/login"
@@ -63,37 +64,37 @@ const Navbar = () => {
         >
           <ul className="mt-4 flex flex-col md:mt-0 md:flex-row md:space-x-8 md:text-base md:font-medium">
             <li>
-              <a
+              <Link
                 href="/"
                 className="block py-2 pl-3 pr-4 md:p-0 text-[#3600D1] font-medium"
               >
                 Home
-              </a>
+              </Link>
             </li>
 
             <li>
-              <a
+              <Link
                 href="/product"
                 className="block py-2 pl-3 pr-4 md:p-0 font-medium text-gray-700 hover:text-[#57009C]"
               >
                 Product
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 href="/about"
                 className="block py-2 pl-3 pr-4 md:p-0 font-medium text-gray-700 hover:text-[#57009C]"
               >
                 About
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 href="/contact"
                 className="block py-2 pl-3 pr-4 md:p-0 font-medium text-gray-700 hover:text-[#57009C]"
               >
                 Contact
-              </a>
+              </Link>
             </li>
             <li className="sm:hidden">
               <button
@@ -101,17 +102,17 @@ const Navbar = () => {
                 className="group relative flex items-stretch justify-center p-0.5 text-center font-medium text-white bg-[#3600D1] border w-full my-4 hover:bg-[#57009C] rounded-lg"
               >
                 <span className="flex items-stretch px-4 py-2 text-sm">
-                  <a href="/contact">Inquire Now</a>
+                  <Link href="/contact">Inquire Now</Link>
                 </span>
               </button>
-              <a
+              <Link
                 href="/app/login"
                 className="group relative flex items-stretch justify-center p-0.5 text-center font-medium w-full text-gray-700"
               >
                 <span className="flex items-stretch px-4 py-2 text-sm">
                   Login
                 </span>
-              </a>
+              </Link>
             </li>
           </ul>
         </div>

@@ -65,7 +65,7 @@ const ProductInventory = () => {
           </p>
           <p className="text-gray-500 sm:ml-10 mb-4 text-sm sm:text-base md:pr-20 pr-8">
             OneLot offers a suite of powerful digital tools designed to optimize
-            your dealership's operations.
+            your dealership&#39;s operations.
           </p>
         </div>
       </div>

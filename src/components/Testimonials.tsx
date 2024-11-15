@@ -43,8 +43,9 @@ const Testimonials = () => {
                     className="shadow-lg rounded-full"
                   />
                   <h4 className="md:w-2/3 text-black font-semibold md:text-2xl text-center my-6">
-                    "The service of OneLot is top notch, they act fast and can
-                    provide dealers with funds they need, when they need it."
+                    &quot;The service of OneLot is top notch, they act fast and
+                    can provide dealers with funds they need, when they need
+                    it.&quot;
                   </h4>
                   <p className="text-center sm:w-1/4 w-2/3 text-base md:text-base">
                     Mark Vergel de Dios{" "}

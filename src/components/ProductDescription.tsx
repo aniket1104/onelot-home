@@ -65,7 +65,7 @@ const ProductDescription = () => {
                 Dealer Loans
               </p>
               <p className="text-gray-500 font-normal text-sm sm:text-base md:text-xl xl:leading-normal">
-                OneLot’s working capital loans allow car dealers to buy more
+                OneLot&#39;s working capital loans allow car dealers to buy more
                 cars and capitalize on car purchase opportunities you would
                 otherwise have missed. We transfer the money to your account
                 within 6 hours.
@@ -93,8 +93,8 @@ const ProductDescription = () => {
               </div>
               <hr className="my-8" />
               <p className="text-gray-500 font-normal text-sm sm:text-base md:text-xl xl:leading-normal">
-                Use OneLot's financing solution today, grow the number of cars
-                in your lot, and increase your profits.
+                Use OneLot&#39;s financing solution today, grow the number of
+                cars in your lot, and increase your profits.
               </p>
             </div>
             <button
@@ -145,8 +145,8 @@ const ProductDescription = () => {
               </div>
               <hr className="my-8" />
               <p className="text-gray-500 font-normal text-sm sm:text-base md:text-xl xl:leading-normal">
-                Sign up for OneLot's dealer platform today, and make managing
-                your cars easier.
+                Sign up for OneLot&#39;s dealer platform today, and make
+                managing your cars easier.
               </p>
             </div>
           </div>
