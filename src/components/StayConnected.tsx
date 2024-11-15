@@ -7,7 +7,7 @@ import {
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 import Image from "next/image";
-import CarouselImage from "../assets/CarouselImage.png";
+import CarouselImage from "@/assets/CarouselImage.png";
 
 const StayConnected = () => {
   const mapArray = [1, 2, 3, 4, 5, 6, 7];
