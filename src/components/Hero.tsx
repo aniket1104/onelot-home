@@ -1,6 +1,6 @@
 import React from "react";
 
-const HeroSection = () => {
+const HeroSection: React.FC = () => {
   return (
     <div>
       <div className="bg-white text-center mt-12 sm:mt-24">

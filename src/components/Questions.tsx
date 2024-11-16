@@ -5,71 +5,9 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { QUESTION_DATA } from "@/utils/constants";
 
-const questionsData = [
-  {
-    id: "item-1",
-    question: "How do I apply for the loan?",
-    answer: (
-      <>
-        OneLot onboarding is easy and straightforward onboarding process. We
-        only require few documents and after few days you can get your first
-        loan.
-        <br />
-        <br />
-        Check here for exact requirements{" "}
-        <span className="text-primaryPurple">See full requirements</span>.
-      </>
-    ),
-  },
-  {
-    id: "item-2",
-    question: "What are the interest rates offered?",
-    answer: (
-      <>
-        OneLot onboarding is easy and straightforward onboarding process. We
-        only require few documents and after few days you can get your first
-        loan.
-        <br />
-        <br />
-        Check here for exact requirements{" "}
-        <span className="text-primaryPurple">See full requirements</span>.
-      </>
-    ),
-  },
-  {
-    id: "item-3",
-    question: "What kinds of vehicles can I upload?",
-    answer: (
-      <>
-        OneLot onboarding is easy and straightforward onboarding process. We
-        only require few documents and after few days you can get your first
-        loan.
-        <br />
-        <br />
-        Check here for exact requirements{" "}
-        <span className="text-primaryPurple">See full requirements</span>.
-      </>
-    ),
-  },
-  {
-    id: "item-4",
-    question: "How can I keep track of potential buyers?",
-    answer: (
-      <>
-        OneLot onboarding is easy and straightforward onboarding process. We
-        only require few documents and after few days you can get your first
-        loan.
-        <br />
-        <br />
-        Check here for exact requirements{" "}
-        <span className="text-primaryPurple">See full requirements</span>.
-      </>
-    ),
-  },
-];
-
-const Questions = () => {
+const Questions: React.FC = () => {
   return (
     <div className="bg-secondaryBackground px-8 py-20">
       <p className="text-4xl font-black mb-8 text-center text-black">
@@ -77,7 +15,7 @@ const Questions = () => {
       </p>
       <div className="mx-auto sm:w-1/2 w-full">
         <Accordion type="single" collapsible className="w-full">
-          {questionsData.map(({ id, question, answer }) => (
+          {QUESTION_DATA.map(({ id, question, answer }) => (
             <AccordionItem key={id} value={id}>
               <AccordionTrigger className="text-base md:text-xl hover:no-underline">
                 <div className="flex">

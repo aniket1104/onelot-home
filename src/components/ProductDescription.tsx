@@ -1,44 +1,10 @@
+import {
+  CAR_FINANCING_FEATURES,
+  DEALERSHIP_MANAGEMENT_DATA,
+} from "@/utils/constants";
 import React from "react";
 
-const carFinancingFeatures = [
-  {
-    id: 1,
-    message:
-      "Interest as low as 1.5% per month with daily calculation of interest",
-  },
-  {
-    id: 2,
-    message: "Financing up to 70% of the vehicle purchase",
-  },
-  {
-    id: 3,
-    message:
-      "Financing period up to 90 days with a flexible repayment schedule at any point",
-  },
-];
-
-const dealershipManagementData = [
-  {
-    id: 1,
-    header: "Inventory Management",
-    message:
-      "Track all details about your cars and sales in one place - from car details to buyers. All you need to know in one place.",
-  },
-  {
-    id: 2,
-    header: "Marketing Tools",
-    message:
-      "Promote your cars across all platforms. Write a marketing text and upload on Facebook Marketplace, Groups, Pages, and Instagram with a single click of a button",
-  },
-  {
-    id: 3,
-    header: "Marketing Insights (Coming Soon)",
-    message:
-      "Get insights on prices and volumes for all cars in the market. We provide you with all the data by combining information from various sources with a single click.",
-  },
-];
-
-const ProductDescription = () => {
+const ProductDescription: React.FC = () => {
   return (
     <>
       <div className="flex flex-col sm:flex-row bg-gray-50 sm:pt-8 py-5 pb-4 px-4 sm:px-0">
@@ -72,7 +38,7 @@ const ProductDescription = () => {
               </p>
               <hr className="my-8" />
               <div className="font-medium text-black">
-                {carFinancingFeatures?.map((item) => (
+                {CAR_FINANCING_FEATURES?.map((item) => (
                   <div className="flex items-center mb-4" key={item.id}>
                     <svg
                       stroke="currentColor"
@@ -121,7 +87,7 @@ const ProductDescription = () => {
               </p>
               <hr className="my-8" />
               <div className="font-medium">
-                {dealershipManagementData?.map((item) => (
+                {DEALERSHIP_MANAGEMENT_DATA?.map((item) => (
                   <div className="flex items-center mb-4" key={item.id}>
                     <svg
                       stroke="currentColor"

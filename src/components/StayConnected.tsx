@@ -9,8 +9,10 @@ import Autoplay from "embla-carousel-autoplay";
 import Image from "next/image";
 import CarouselImage from "@/assets/carouselImage.png";
 
-const StayConnected = () => {
+const StayConnected: React.FC = () => {
+  // Map array for images
   const mapArray = [1, 2, 3, 4, 5, 6, 7];
+
   return (
     <>
       <div className="bg-white pt-10">
@@ -18,13 +20,13 @@ const StayConnected = () => {
           <p className="text-4xl font-black mb-8">Stay Connected</p>
           <p className="text-gray-500 font-normal sm:w-1/2 mx-auto md:text-xl text-base">
             Follow OneLot on Facebook and Instagram to stay up to date with our
-            most recent latest offers, updates, and new product features.
+            most recent offers, updates, and new product features.
           </p>
           <div className="flex flex-col sm:flex-row justify-center px-6 my-8">
             {/* Facebook Button */}
             <button
               type="button"
-              className="group relative flex items-stretch justify-center p-0.5 text-center font-medium transition-[color,background-color,border-color,text-decoration-color,fill,stroke,box-shadow] focus:z-10 focus:outline-none focus:ring-0 focus:ring-transparent rounded-lg border border-black mb-4 sm:mb-0 sm:mr-3"
+              className="group relative flex items-stretch justify-center p-0.5 text-center font-medium transition-all duration-200 rounded-lg border border-black mb-4 sm:mb-0 sm:mr-3"
             >
               <span className="flex items-stretch transition-all duration-200 rounded-md px-4 py-2 text-sm">
                 <a
@@ -53,7 +55,7 @@ const StayConnected = () => {
             {/* Instagram Button */}
             <button
               type="button"
-              className="group relative flex items-stretch justify-center p-0.5 text-center font-medium transition-[color,background-color,border-color,text-decoration-color,fill,stroke,box-shadow] focus:z-10 focus:outline-none focus:ring-0 focus:ring-transparent rounded-lg border border-black"
+              className="group relative flex items-stretch justify-center p-0.5 text-center font-medium transition-all duration-200 rounded-lg border border-black"
             >
               <span className="flex items-stretch transition-all duration-200 rounded-md px-4 py-2 text-sm">
                 <a
@@ -103,13 +105,12 @@ const StayConnected = () => {
                   src={CarouselImage}
                   height={200}
                   width={300}
-                  alt="carousel-image"
+                  alt={`carousel-image-${index}`}
                   className="shadow-lg"
                 />
               </CarouselItem>
             ))}
           </CarouselContent>
-          {/* Navigation buttons are intentionally commented out */}
         </Carousel>
       </div>
     </>

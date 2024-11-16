@@ -1,6 +1,6 @@
 import React from "react";
 
-const GetStarted = () => {
+const GetStarted: React.FC = () => {
   return (
     <div className="bg-white">
       <div className="text-center px-8 py-20 flex flex-col justify-center items-center">

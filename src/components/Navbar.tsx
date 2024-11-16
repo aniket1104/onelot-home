@@ -1,18 +1,19 @@
 "use client";
+
 import Link from "next/link";
 import React, { useState } from "react";
+import { NAVIGATION_LINKS } from "@/utils/constants";
 
-const Navbar = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+const Navbar: React.FC = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
+  const toggleMenu = () => setIsMenuOpen((prev) => !prev);
 
   return (
     <nav className="bg-white px-2 py-2.5 dark:border-gray-700 dark:bg-gray-800 sm:px-4">
       <div className="mx-auto flex flex-wrap items-center">
-        <Link className="flex items-center" href="/">
+        {/* Logo */}
+        <Link href="/" className="flex items-center">
           <img
             alt="OneLot Logo"
             loading="lazy"
@@ -23,95 +24,74 @@ const Navbar = () => {
             src="https://www.onelot.ph/_next/image?url=%2Flogo.png&w=128&q=75"
           />
         </Link>
-        <div className="flex md:order-2 ml-auto">
-          <a
+
+        {/* Right-side Buttons */}
+        <div className="flex ml-auto md:order-2">
+          {/* Login Button */}
+          <Link
             href="/app/login"
-            className="group relative items-stretch justify-center p-0.5 text-center font-medium hidden sm:inline text-gray-700 hover:text-[#57009C]"
+            className="hidden sm:inline text-black hover:text-[#57009C] sm:mt-1 font-medium"
           >
-            <span className="flex items-stretch px-4 py-2 text-sm">Login</span>
-          </a>
-          <button
-            type="button"
-            className="group relative items-stretch justify-center p-0.5 text-center font-medium text-white bg-primaryPurple border hidden sm:inline hover:bg-[#57009C] rounded-lg"
+            <span className="px-4 py-2 text-sm">Login</span>
+          </Link>
+
+          {/* Inquire Now Button */}
+          <Link
+            href="/app/signup/dealer"
+            className="hidden sm:inline text-white bg-primaryPurple hover:bg-[#57009C] font-medium px-4 py-2 text-sm rounded-lg ml-2"
           >
-            <span className="flex items-stretch px-4 py-2 text-sm">
-              <a href="/app/signup/dealer">Inquire Now</a>
-            </span>
-          </button>
-          {/* Hamburger button */}
+            Inquire Now
+          </Link>
+
+          {/* Hamburger Button */}
           <button
             onClick={toggleMenu}
             className="inline-flex items-center rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600 md:hidden"
+            aria-label="Toggle menu"
           >
-            <span className="sr-only">Open main menu</span>
             <svg
-              stroke="currentColor"
-              fill="currentColor"
-              strokeWidth="0"
-              viewBox="0 0 448 512"
               aria-hidden="true"
-              className="h-6 w-6"
               xmlns="http://www.w3.org/2000/svg"
+              className="h-6 w-6"
+              fill="currentColor"
+              viewBox="0 0 448 512"
             >
               <path d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z" />
             </svg>
           </button>
         </div>
+
+        {/* Navigation Menu */}
         <div
           className={`w-full md:block md:w-auto ${
             isMenuOpen ? "block" : "hidden"
           } ml-2`}
         >
           <ul className="mt-4 flex flex-col md:mt-0 md:flex-row md:space-x-8 md:text-base md:font-medium">
-            <li>
-              <Link
-                href="/"
-                className="block py-2 pl-3 pr-4 md:p-0 text-[#3600D1] font-medium"
-              >
-                Home
-              </Link>
-            </li>
+            {NAVIGATION_LINKS.map((item) => (
+              <li key={item.href}>
+                <Link
+                  href={item.href}
+                  className="block py-2 pl-3 pr-4 md:p-0 text-black hover:text-[#57009C] font-medium"
+                >
+                  {item.label}
+                </Link>
+              </li>
+            ))}
 
-            <li>
-              <Link
-                href="/product"
-                className="block py-2 pl-3 pr-4 md:p-0 font-medium text-gray-700 hover:text-[#57009C]"
-              >
-                Product
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/about"
-                className="block py-2 pl-3 pr-4 md:p-0 font-medium text-gray-700 hover:text-[#57009C]"
-              >
-                About
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/contact"
-                className="block py-2 pl-3 pr-4 md:p-0 font-medium text-gray-700 hover:text-[#57009C]"
-              >
-                Contact
-              </Link>
-            </li>
+            {/* Mobile-specific Buttons */}
             <li className="sm:hidden">
-              <button
-                type="button"
-                className="group relative flex items-stretch justify-center p-0.5 text-center font-medium text-white bg-[#3600D1] border w-full my-4 hover:bg-[#57009C] rounded-lg"
+              <Link
+                href="/app/signup/dealer"
+                className="flex items-center justify-center w-full py-2 my-2 text-white bg-primaryPurple hover:bg-[#57009C] rounded-lg"
               >
-                <span className="flex items-stretch px-4 py-2 text-sm">
-                  <Link href="/contact">Inquire Now</Link>
-                </span>
-              </button>
+                Inquire Now
+              </Link>
               <Link
                 href="/app/login"
-                className="group relative flex items-stretch justify-center p-0.5 text-center font-medium w-full text-gray-700"
+                className="flex items-center justify-center w-full py-2 text-gray-700 hover:text-[#57009C]"
               >
-                <span className="flex items-stretch px-4 py-2 text-sm">
-                  Login
-                </span>
+                Login
               </Link>
             </li>
           </ul>

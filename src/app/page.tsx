@@ -1,3 +1,4 @@
+import React from "react";
 import Footer from "@/components/Footer";
 import GetStarted from "@/components/GetStarted";
 import HeroSection from "@/components/Hero";
@@ -9,7 +10,7 @@ import StayConnected from "@/components/StayConnected";
 import Testimonials from "@/components/Testimonials";
 import WhyOnelot from "@/components/WhyOneLot";
 
-export default function Home() {
+const Home: React.FC = () => {
   return (
     <>
       <Navbar />
@@ -24,4 +25,6 @@ export default function Home() {
       <Footer />
     </>
   );
-}
+};
+
+export default Home;

@@ -1,6 +1,6 @@
 import React from "react";
 
-const ProductInventory = () => {
+const ProductInventory: React.FC = () => {
   return (
     <div className="grid grid-cols-1 gap-0 sm:grid-cols-2 px-4 sm:px-8 md:px-16 py-8">
       <div className="sm:pr-8 md:pr-20 md:pl-8 sm:pt-16 sm:pb-8 mx-auto mb-8 pb-4 border-b border-gray-300 sm:border-none">

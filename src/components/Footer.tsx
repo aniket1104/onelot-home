@@ -1,7 +1,8 @@
+import { NAVIGATION_LINKS } from "@/utils/constants";
 import Link from "next/link";
 import React from "react";
 
-const Footer = () => {
+const Footer: React.FC = () => {
   return (
     <footer
       data-testid="flowbite-footer"
@@ -18,29 +19,17 @@ const Footer = () => {
             className="mb-4 sm:mb-0"
             src="https://www.onelot.ph/_next/image?url=%2Flogo.png&w=256&q=75"
           />
-          <div className="flex-col flex sm:flex-row sm:gap-x-12 text-start">
-            <Link className="text-gray-700 hover:text-[#57009C]" href="/">
-              Home
-            </Link>
-            <Link
-              className="text-gray-700 hover:text-[#57009C] block"
-              href="/about"
-            >
-              About
-            </Link>
-            <Link
-              className="text-gray-700 hover:text-[#57009C] block"
-              href="/contact"
-            >
-              Contact
-            </Link>
-            <Link
-              className="text-gray-700 hover:text-[#57009C] block"
-              href="/faq"
-            >
-              FAQs
-            </Link>
-          </div>
+          <nav className="flex-col flex sm:flex-row sm:gap-x-12 text-start">
+            {NAVIGATION_LINKS.map(({ href, label }) => (
+              <Link
+                key={href}
+                className="text-gray-700 hover:text-[#57009C]"
+                href={href}
+              >
+                {label}
+              </Link>
+            ))}
+          </nav>
         </div>
         <hr
           data-testid="footer-divider"

@@ -11,8 +11,8 @@ import Autoplay from "embla-carousel-autoplay";
 import Image from "next/image";
 import ProfilePic from "../assets/profilePic.jpg";
 
-const Testimonials = () => {
-  const mapArray = [1, 2, 3, 4, 5, 6, 7];
+const Testimonials: React.FC = () => {
+  const mapArray = [1, 2, 3];
 
   return (
     <div className="bg-secondaryBackground px-8 py-20">

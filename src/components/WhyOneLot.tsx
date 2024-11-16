@@ -1,42 +1,18 @@
+import { WHY_FEATURES } from "@/utils/constants";
 import React from "react";
 
-const WhyOnelot = () => {
-  const features = [
-    {
-      title: "Trust",
-      description:
-        "Regulated by Securities and Exchange Commission (SEC) Philippines",
-      image: "https://www.onelot.ph/trust.svg",
-    },
-    {
-      title: "High Amount",
-      description:
-        "Get the highest loan amounts compared to other banks and lenders",
-      image: "https://www.onelot.ph/high_amount.svg",
-    },
-    {
-      title: "Fast",
-      description: "Get the money within a few hours on the same day",
-      image: "https://www.onelot.ph/fast.svg",
-    },
-    {
-      title: "Flexible",
-      description: "Loans are tailored to your needs",
-      image: "https://www.onelot.ph/flexible.svg",
-    },
-    {
-      title: "Easy",
-      description:
-        "Run through an easy process and get your first loans within days",
-      image: "https://www.onelot.ph/easy.svg",
-    },
-  ];
+interface Feature {
+  title: string;
+  description: string;
+  image: string;
+}
 
+const WhyOnelot = () => {
   return (
     <div className="bg-white text-center px-16 sm:py-24 py-8">
       <p className="text-4xl font-extrabold mb-8">Why Onelot?</p>
       <div className="flex flex-col gap-4 sm:flex-row sm:justify-center items-center">
-        {features.map((feature, index) => (
+        {WHY_FEATURES.map((feature: Feature, index: number) => (
           <div
             key={index}
             className="bg-white dark:border-gray-700 dark:bg-gray-800 flex flex-col items-center border border-gray-200 rounded-lg overflow-hidden w-80 h-60 shadow-md"
